@@ -39,12 +39,10 @@
           <p>Select Category</p>
         </div>
         <div class="col-sm-9">
-          <!-- {{lists}} -->
           <select ng-model="category" ng-options="item as item.name for item in lists track by item.type_id"></select>
-          <!-- item as item.name for item in lists track by item.type_id -->
         </div>
       </div>
-      <div class="row create-event-date">
+      <div class="row create-event-date" ng-if="category.isscheduled">
         <div class="col-sm-3">
           <p>Event Date</p>
           <!-- intigrate calendar and f -->
@@ -58,7 +56,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" ng-if="category.isscheduled">
         <div class="col-sm-3">
           <p>Event Time</p>
         </div>
